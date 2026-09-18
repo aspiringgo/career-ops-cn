@@ -1,0 +1,47 @@
+{
+  "name": "career-ops-cn",
+  "version": "0.1.0",
+  "private": false,
+  "description": "本地优先的中文 Career Ops：读取简历和岗位信息，生成可审阅的求职分析报告。",
+  "main": "src/cli.js",
+  "bin": {
+    "career-ops-cn": "src/cli.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "USER_GUIDE.md",
+    "WORKFLOW.md",
+    "LICENSE",
+    ".env.example"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aspiringgo/career-ops-cn.git"
+  },
+  "homepage": "https://github.com/aspiringgo/career-ops-cn",
+  "bugs": {
+    "url": "https://github.com/aspiringgo/career-ops-cn/issues"
+  },
+  "keywords": [
+    "career-ops",
+    "job-search",
+    "resume",
+    "jd",
+    "deepseek",
+    "qwen",
+    "chinese-ai"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "help": "node src/cli.js --help"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "pdf-parse": "^1.1.1"
+  }
+}

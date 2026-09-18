@@ -1,0 +1,5 @@
+node_modules/
+.env
+reports/
+normalized/
+.DS_Store
