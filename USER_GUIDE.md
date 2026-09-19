@@ -67,6 +67,22 @@ career-ops-cn --help
 cp .env.example .env
 ```
 
+### API Key 应该存在哪里
+
+普通用户请把 Key 存在本机项目根目录：
+
+```text
+career-ops-cn/.env
+```
+
+例如，如果项目放在 `~/Projects`，文件位置就是：
+
+```text
+~/Projects/career-ops-cn/.env
+```
+
+`.env` 只存在于用户自己的电脑上，并且已被 `.gitignore` 排除，不会随公开 GitHub 仓库发布。不要把 Key 放进 README、源代码、简历、JD、小程序代码、issue、截图或终端日志。
+
 编辑 `.env`，选择一个 Provider。推荐中文场景先使用 DeepSeek：
 
 ```env
@@ -114,7 +130,7 @@ CAREER_OPS_API_KEY=你的Key npm start -- \
   --jd ~/Documents/job.md
 ```
 
-程序只在当前进程读取这个环境变量，不会把它写入报告、规范化文件或日志。`.env` 已加入 `.gitignore`，不要把它提交到 GitHub。
+程序只在当前进程读取这个环境变量，不会把它写入报告、规范化文件或日志。命令结束后，Career Ops CN 不会保存这个临时 Key。`.env` 已加入 `.gitignore`，不要把它提交到 GitHub。
 
 ## 运行帮助
 
@@ -193,6 +209,8 @@ reports/YYYY-MM-DD...-provider.md
 
 ## 隐私与安全
 
+- 推荐存储位置：本地项目根目录 `career-ops-cn/.env`
+- `.env` 不会被公开仓库收录
 - API Key 不写入报告
 - API Key 不写入 `normalized/`
 - `.env` 不提交到 GitHub

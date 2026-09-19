@@ -84,7 +84,30 @@ reports/*.md
 
 ## 用户自带 API Key
 
-本地模式不需要平台后端。用户可以将自己的 Key 临时注入当前命令：
+本地模式不需要平台后端。普通用户推荐把 API Key 存放在本机项目根目录的 `.env` 文件：
+
+```text
+career-ops-cn/.env
+```
+
+创建方式：
+
+```bash
+cd career-ops-cn
+cp .env.example .env
+```
+
+然后只在 `career-ops-cn/.env` 中填写一个 Provider 的 Key：
+
+```env
+AI_PROVIDER=deepseek
+DEEPSEEK_API_KEY=你的DeepSeek_API_Key
+DEEPSEEK_MODEL=deepseek-chat
+```
+
+程序从当前运行目录的 `.env` 读取配置，因此请在 `career-ops-cn` 目录执行命令。不要把 Key 放进简历、JD、README、源代码或小程序代码。
+
+如果不想保存到 `.env`，用户也可以临时注入当前命令：
 
 ```bash
 CAREER_OPS_API_KEY=你的Key npm start -- \
@@ -93,7 +116,7 @@ CAREER_OPS_API_KEY=你的Key npm start -- \
   --jd-url https://example.com/job
 ```
 
-该 Key 只用于当前进程，不会写入报告。不要提交 `.env`，也不要在 issue 或终端日志中公开 Key。
+该 Key 只用于当前进程，不会写入报告、`normalized/` 或 `reports/`。`.env` 已加入 `.gitignore`，不会提交到 GitHub。不要在 issue 或终端日志中公开 Key；如果 Key 曾经泄露，请立即撤销并重新生成。
 
 ## 设计边界
 
